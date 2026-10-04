@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Grocery</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="hero">
+  <div class="container hero-inner">
+    <div class="topbar">
+      <div class="brand"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20 8.5c0 5.4-8 10-8 10S4 13.9 4 8.5C4 5.9 5.8 4 8.2 4c1.5 0 2.9.8 3.8 2 0.9-1.2 2.3-2 3.8-2C18.2 4 20 5.9 20 8.5Z"/></svg></span><span>Smart Grocery</span></div>
+      <span class="hero-badge"><span class="sparkle">✦</span> clever einkaufen · weniger zahlen</span>
+    </div>
+    <p class="eyebrow">DEIN DIGITALER EINKAUFSPLANER</p>
+    <h1>Finde deinen günstigsten Einkauf.</h1>
+    <p class="subtitle">Produkte auswählen, Budget festlegen und die günstigste Supermarkt-Kombination berechnen.</p>
+    <div class="hero-chips">
+      <span class="hero-chip"><span class="chip-icon">⌁</span> Billa · Hofer · Spar</span>
+      <span class="hero-chip"><span class="chip-icon">%</span> Rabatte berücksichtigen</span>
+      <span class="hero-chip"><span class="chip-icon">♡</span> Budget im Blick behalten</span>
+    </div>
+    <div class="hero-decoration deco-one">✦</div>
+    <div class="hero-decoration deco-two">♡</div>
+  </div>
+</header>
+
+<main class="container">
+  <section class="card setup-card">
+    <div class="section-title">
+      <div class="title-with-icon"><span class="section-icon blush" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 3h12v18H6zM9 7h6M9 11h6M9 15h4"/></svg></span><div><h2>1. Einkauf planen</h2><p>Lege Budget und maximale Anzahl an Supermärkten fest.</p></div></div>
+    </div>
+    <div class="grid three">
+      <label>Budget (€)
+        <input id="budget" type="number" min="0" step="0.01" placeholder="z. B. 50">
+      </label>
+      <label>Max. Supermärkte
+        <select id="maxMarkets">
+          <option value="1">1</option>
+          <option value="2" selected>2</option>
+          <option value="3">3</option>
+        </select>
+      </label>
+      <div class="info-box"><span class="info-icon">%</span><div><strong>Rabatte</strong><span>Optional pro Supermarkt in Prozent.</span></div></div>
+    </div>
+    <div class="discounts">
+      <label>Billa Rabatt (%)<input id="discountBilla" type="number" min="0" max="100" step="0.1" value="0"></label>
+      <label>Hofer Rabatt (%)<input id="discountHofer" type="number" min="0" max="100" step="0.1" value="0"></label>
+      <label>Spar Rabatt (%)<input id="discountSpar" type="number" min="0" max="100" step="0.1" value="0"></label>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="section-title">
+      <div class="title-with-icon"><span class="section-icon green" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 7h16l-1 12H5L4 7Zm3 0a5 5 0 0 1 10 0M8 11v4M12 11v4M16 11v4"/></svg></span><div><h2>2. Produkte hinzufügen</h2><p>Wähle ein Produkt aus der Datenbank oder füge ein eigenes Produkt mit Preisen ein.</p></div></div>
+      <span class="limit-badge"><span id="itemCount">0</span>/200 Produkte</span>
+    </div>
+    <div class="add-product">
+      <div class="grid four">
+        <label>Produkt<select id="productSelect"><option value="">Produkt auswählen …</option></select></label>
+        <label>Menge<input id="quantity" type="number" min="1" max="200" step="1" value="1"></label>
+        <label>Kategorie<input id="categoryPreview" type="text" placeholder="wird automatisch gesetzt" readonly></label>
+        <button id="addBtn" class="primary"><span class="button-icon">＋</span> Hinzufügen</button>
+      </div>
+    </div>
+    <details class="custom-product">
+      <summary><span class="summary-icon">＋</span> Eigenes Produkt mit Preisen eintragen</summary>
+      <div class="grid five">
+        <label>Produktname<input id="customName" type="text" maxlength="60" placeholder="z. B. Kaffee"></label>
+        <label>Kategorie<input id="customCategory" type="text" maxlength="40" placeholder="z. B. Getränke"></label>
+        <label>Billa (€)<input id="customBilla" type="number" min="0" max="200" step="0.01"></label>
+        <label>Hofer (€)<input id="customHofer" type="number" min="0" max="200" step="0.01"></label>
+        <label>Spar (€)<input id="customSpar" type="number" min="0" max="200" step="0.01"></label>
+      </div>
+      <button id="customAddBtn" class="secondary">Eigenes Produkt hinzufügen</button>
+      <p class="hint">Maximal €200 pro Produkt. Die eigenen Produkte gelten für diesen Einkauf.</p>
+    </details>
+  </section>
+
+  <section class="card">
+    <div class="section-title">
+      <div class="title-with-icon"><span class="section-icon lavender" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 6h14M5 12h14M5 18h9"/><circle cx="3" cy="6" r="1"/><circle cx="3" cy="12" r="1"/><circle cx="3" cy="18" r="1"/></svg></span><div><h2>3. Deine Einkaufsliste</h2><p>Die Preise werden automatisch mit den aktuellen Rabatten berücksichtigt.</p></div></div>
+      <button id="clearBtn" class="ghost"><span>⌫</span> Liste leeren</button>
+    </div>
+    <div id="emptyState" class="empty"><span class="empty-icon">♡</span><strong>Noch keine Produkte</strong><span>Füge oben etwas zu deiner Einkaufsliste hinzu.</span></div>
+    <div id="shoppingList" class="shopping-list"></div>
+  </section>
+
+  <section class="action-area">
+    <div class="action-decoration left">✦</div>
+    <button id="calculateBtn" class="primary big"><span class="button-icon">⌕</span> Günstigsten Einkauf berechnen <span class="button-arrow">→</span></button>
+    <div class="action-decoration right">♡</div>
+  </section>
+
+  <section id="resultCard" class="card result hidden">
+    <div class="section-title">
+      <div class="title-with-icon"><span class="section-icon green" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m12 3 2.2 4.5 5 .7-3.6 3.5.9 5-4.5-2.4-4.5 2.4.9-5-3.6-3.5 5-.7L12 3Z"/></svg></span><div><h2>4. Ergebnis</h2><p>Die günstigste erlaubte Kombination wird angezeigt.</p></div></div>
+      <span id="budgetStatus" class="status"></span>
+    </div>
+    <div id="summary" class="summary-grid"></div>
+    <div id="recommendation"></div>
+  </section>
+
+  <section class="card">
+    <div class="section-title">
+      <div class="title-with-icon"><span class="section-icon blush" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 19V9M12 19V5M19 19v-7"/></svg></span><div><h2>Deine Statistik</h2><p>Deine bisherigen Einkäufe – lokal auf diesem Gerät gespeichert.</p></div></div>
+    </div>
+    <div id="stats" class="stats-grid"></div>
+    <p class="hint">Nach 3 Stunden ohne Aktivität wird die aktuelle Einkaufssitzung automatisch zurückgesetzt. Die Statistik bleibt als Verlauf gespeichert.</p>
+  </section>
+</main>
+
+<footer><div class="container"><span>♡</span> Smart Grocery · Projekt Webentwicklung <span>♡</span></div></footer>
+<script src="app.js"></script>
+</body>
+</html>

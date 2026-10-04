@@ -1,0 +1,124 @@
+{
+  "products": [
+    {
+      "id": "milch",
+      "name": "Milch",
+      "category": "Milchprodukte",
+      "prices": {
+        "Billa": 1.79,
+        "Hofer": 1.39,
+        "Spar": 1.69
+      }
+    },
+    {
+      "id": "nudeln",
+      "name": "Nudeln",
+      "category": "Grundnahrungsmittel",
+      "prices": {
+        "Billa": 1.69,
+        "Hofer": 1.29,
+        "Spar": 1.49
+      }
+    },
+    {
+      "id": "tomaten",
+      "name": "Tomaten",
+      "category": "Obst & Gemüse",
+      "prices": {
+        "Billa": 3.2,
+        "Hofer": 2.49,
+        "Spar": 2.89
+      }
+    },
+    {
+      "id": "kaese",
+      "name": "Käse",
+      "category": "Milchprodukte",
+      "prices": {
+        "Billa": 3.49,
+        "Hofer": 3.29,
+        "Spar": 2.99
+      }
+    },
+    {
+      "id": "aepfel",
+      "name": "Äpfel",
+      "category": "Obst & Gemüse",
+      "prices": {
+        "Billa": 2.79,
+        "Hofer": 2.49,
+        "Spar": 2.29
+      }
+    },
+    {
+      "id": "bananen",
+      "name": "Bananen",
+      "category": "Obst & Gemüse",
+      "prices": {
+        "Billa": 2.19,
+        "Hofer": 1.89,
+        "Spar": 1.99
+      }
+    },
+    {
+      "id": "brot",
+      "name": "Brot",
+      "category": "Backwaren",
+      "prices": {
+        "Billa": 2.69,
+        "Hofer": 2.39,
+        "Spar": 2.49
+      }
+    },
+    {
+      "id": "butter",
+      "name": "Butter",
+      "category": "Milchprodukte",
+      "prices": {
+        "Billa": 2.89,
+        "Hofer": 2.69,
+        "Spar": 2.79
+      }
+    },
+    {
+      "id": "reis",
+      "name": "Reis",
+      "category": "Grundnahrungsmittel",
+      "prices": {
+        "Billa": 2.29,
+        "Hofer": 1.89,
+        "Spar": 1.99
+      }
+    },
+    {
+      "id": "cola",
+      "name": "Cola",
+      "category": "Getränke",
+      "prices": {
+        "Billa": 2.19,
+        "Hofer": 1.99,
+        "Spar": 1.79
+      }
+    },
+    {
+      "id": "eier",
+      "name": "Eier",
+      "category": "Grundnahrungsmittel",
+      "prices": {
+        "Billa": 3.29,
+        "Hofer": 2.99,
+        "Spar": 3.19
+      }
+    },
+    {
+      "id": "joghurt",
+      "name": "Joghurt",
+      "category": "Milchprodukte",
+      "prices": {
+        "Billa": 1.49,
+        "Hofer": 1.19,
+        "Spar": 1.39
+      }
+    }
+  ]
+}
