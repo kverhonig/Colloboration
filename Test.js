@@ -20,7 +20,7 @@ const fahrraeder = zeilen.slice(1).map((zeile) => {
         datensatz[spalte] = werte[index];
     });
 
-    return datensatz;
+    return datensatz; 
 });
 
 // Gesamten Datensatz ausgeben
